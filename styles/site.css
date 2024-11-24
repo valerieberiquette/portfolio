@@ -54,7 +54,7 @@ body{
 }
 
 .one nav{
-    background-color: rgb(65, 110, 74);
+    background-color: rgb(65, 110, 74);;
     margin-top: -25px;
     padding-top: 20px;
     height: 90px;
@@ -88,13 +88,13 @@ body{
 #scrolldown{
     font-size: 30px;
     font-family:'Playfair Display';
-    background-color: rgb(198, 217, 242);
+    background-color: rgb(198, 242, 213);
     width: fit-content;
     padding: 15px;
     color: rgb(0, 0, 0);
     border-radius: 15px;
     border-style: none;
-    transition: transform 1s ease-in-out;
+    transition: transform 0.4s ease-in-out;
 }
 
 #scrolldown:hover{
@@ -153,7 +153,7 @@ body{
     transform:scale(1.1);
     z-index: 2;
     box-shadow: -5px 10px 15px rgba(15, 16, 15, 0.502);
-    background-color: rgb(253, 247, 164);
+    background-color: rgb(176, 233, 120);
 }
 
 .websites h1{
@@ -217,6 +217,12 @@ body{
     margin-top: -25px;
 }
 
+.topic p {
+    white-space: nowrap; /* Prevent text from wrapping inside each <p> */
+    padding: 5px 10px; /* Optional: Add padding to the boxes */
+    flex-shrink: 0; /* Prevent items from shrinking */
+}
+
 #g{
     background-color: rgba(0, 0, 255, 0.117);
     padding: 8px;
@@ -247,8 +253,15 @@ body{
     border-radius: 10px;
  }
 
+ #a{
+    background-color: rgba(188, 109, 19, 0.219);
+    padding: 8px;
+    border-radius: 10px;
+ }
+
 .group img{
-    height: 270px;
+    
+    width: 400px;
     border-radius: 25px;
     border: solid 20px;
     border-color: rgb(163, 184, 136);
@@ -259,7 +272,8 @@ body{
 /**about*/
 #notice{
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
+    margin-top: 50px;
 }
 .about{
     padding-left: 50px;
@@ -288,7 +302,7 @@ body{
 }
 
 .about p{
-    font-size: 25px;
+    font-size: 23px;
     font-family:'Playfair Display';
     font-weight: lighter;
     line-height: 35px;
@@ -312,9 +326,10 @@ body{
   
   .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 2fr);
     gap: 40px;
     max-width: 1200px;
+    margin-top: -100px;
   }
   
   .image-grid img {
@@ -394,13 +409,13 @@ hr{
 .intro{
     width: 1000px;
     margin:auto;
-    font-size: 25px;
+    
 }
 
 .intro p{
     text-align: left;
     font-family: 'Poppins', sans-serif;
-    font-size: 23px;
+    font-size: 19px;
 }
 
 .step {
@@ -428,7 +443,7 @@ hr{
 
 .step #center{
     text-align: center;
-    font-size: 23px;
+    font-size: 19px;
     margin-bottom: 40px;
 
 }
@@ -443,16 +458,16 @@ hr{
 }
 
 .group1{
-    width: 300px;
+    width: 400px;
     font-size: 15px;
     text-align: center;
     background-color: rgb(249, 212, 163);
-    padding: 10px;
+    padding: 20px;
     border-radius: 15px;
 }
 
 .group2{
-    width: 300px;
+    width: 400px;
     font-size: 18px;
     text-align: center;
     height: 207.609px;
@@ -468,7 +483,7 @@ hr{
 
 
 .step #side1{
-    font-size: 23px;
+    font-size: 20px;
     background-color:rgba(132, 130, 129, 0.266);
     border-radius: 15px;
     padding: 30px;
@@ -506,7 +521,7 @@ hr{
 }
 
 .insights1 .insights{
-    font-size: 23px;
+    font-size: 19px;
     width: 2500px;
 }
 
@@ -527,7 +542,7 @@ hr{
 }
 
 .persona p{
-    font-size: 23px;
+    font-size: 19px;
     text-align: center;
 }
 
@@ -547,7 +562,7 @@ hr{
 }
 
 .step #side3{
-    font-size: 23px;
+    font-size: 20px;
     background-color: rgba(245, 202, 150, 0.297);
     border-radius: 15px;
     padding: 30px;
@@ -571,7 +586,7 @@ hr{
 }
 
 .goals p{
-    font-size: 23px;
+    font-size: 19px;
     width: 400px;
     text-align: center;
 }
@@ -643,7 +658,7 @@ hr{
 }
 
 .top img{
-    height: 450px;
+    height: 350px;
 }
 
 .top .bullet{
@@ -683,7 +698,7 @@ hr{
 
 .mission p{
     font-family: 'Poppins', sans-serif;
-    font-size: 23px;
+    font-size: 19px;
     width: 1200px;
     margin: auto;
 }
@@ -700,6 +715,10 @@ hr{
     color: red;
     font-style: normal;
     font-weight: bold;
+}
+
+.mission img{
+    height: 500px;
 }
 
 #m{
@@ -726,9 +745,10 @@ hr{
 
 .task1 p{
     font-family: 'Poppins', sans-serif;
-    font-size: 23px;
+    font-size: 19px;
     width: 1200px;
     margin: auto;
+    text-align: center;
 }
 
 #m2{
@@ -759,7 +779,7 @@ hr{
 
 .task2 p{
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 19px;
     margin: auto;
     width: 400px;
 }
@@ -798,9 +818,10 @@ hr{
 
 .task3 p{
     font-family: 'Poppins', sans-serif;
-    font-size: 23px;
+    font-size: 19px;
     margin: auto;
     width: 1200px;
+    text-align: center;
 }
 
 .task3 img{
@@ -835,7 +856,7 @@ hr{
 }
 
 .star p{
-    font-size: 20px;
+    font-size: 19px;
     font-weight: bolder;
 }
 
@@ -848,9 +869,10 @@ hr{
 
 #t4{
     font-family: 'Poppins', sans-serif;
-    font-size: 23px;
+    font-size: 19px;
     margin: auto;
     width: 1200px;
+    text-align: center;
 }
 
 
@@ -861,6 +883,11 @@ hr{
     justify-content: center;
     gap: 70px;
     margin:100px;
+}
+
+.task4 p{
+    font-size: 19px;
+    text-align: center;
 }
 
 .summary .ul2{
@@ -876,7 +903,7 @@ hr{
 
 .summary p{
     font-family: 'Poppins', sans-serif;
-    font-size: 23px;
+    font-size: 19px;
     margin: auto;
 
 }
@@ -890,7 +917,7 @@ hr{
 .summary li{
     list-style:circle;
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 @media only screen and (max-width: 768px) {
