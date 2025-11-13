@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rocket</title>
+  <link rel="stylesheet" type="text/css" href="styles/site.css"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..
+700&family=Londrina+Shadow&family=Noto+Sans+Duployan:wght@400;700&family=Nunito:ital,
+wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&display=swap" rel="stylesheet">
+</head>
+
+<body class="simulator">
+
+<header class="one">
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="art.html">Art</a></li>
+            <li><a href="https://drive.google.com/file/d/1s8ACDg1jfk1AbLOFsMcXgZycfJGfsRyQ/view?usp=sharing">Resume</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="rocket-container">
+  <div class="left">
+    <h1 id="rocket-title">Simulator</h1>
+
+
+    <div class="inputs">
+
+        <div class="input1">
+            <label for="mass">Mass &#40;KG&#41;:</label>
+            <input type="number" placeholder="Enter number" min=0 id="mass"/>
+        </div>
+
+        <div class="input2">
+            <label for="burntime">Burntime:</label>
+            <input type="number" placeholder="Enter number" min=0 id="burntime">
+        </div>
+
+        <div class="input3">
+            <label for="fn">Thrust &#40;FN&#41;:</label>
+            <input type="number" placeholder="Enter number" min=0 id="fn">
+        </div>
+
+    </div>
+
+    <div class="rocket-buttons">
+        <button id="rbutton" onclick="simulate()">Submit</button>
+        <button id= "rbutton" onclick="resetSimulation()">Reset</button>
+        <button id= "rbutton" onclick="togglePause()">Pause</button>
+    </div>
+
+      <div class="equation">
+        <p id="acceleration">Acceleration = FN/M</p>
+      </div>
+
+      <div id="output">
+          <h3>Simulation Result:</h3>
+          <p>Time: <span id="timeVal">0</span> s</p>
+          <p>Position: <span id="posVal">0.00</span> m</p>
+          <p>Velocity: <span id="velVal">0.00</span> m/s</p>
+      </div>
+  </div>
+
+  <div class="right">
+    <div id="sky">
+      <img id="rocket" src="images/rocket.png" alt="Rocket">
+    </div>
+
+  </div>
+
+   <script src="scripts/simulation.js"></script>
+
+</div>
+
+
+</body>
+</html>

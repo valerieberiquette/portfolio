@@ -19,12 +19,21 @@ body{
 
 .one nav ul a{
     text-decoration: none;
-    color:rgb(255, 255, 255)
+    color:rgb(255, 255, 255);
+}
+
+.one p{
+    text-align: center;
+}
+
+#scrolldown {
+    color:rgb(255, 255, 255);
 }
 
 .one nav li{
     position: relative;
     cursor: pointer;
+    font-family: "Rationale", sans-serif;
 }
 
 .one nav li::before{
@@ -61,31 +70,43 @@ body{
 }
 
 .one .des{
-    background-color: rgb(65, 110, 74);;
-    color: rgb(255, 255, 255);
-    position: relative;
-    padding-left: 100px;
-    height: fit-content;
-    padding-bottom: 170px;
-    padding-right: 350px;
-    padding-top: 150px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 10px;
+}
+
+.des em{
+    font-family: "Londrina Shadow", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    color: #2392b7;
+}
+
+
+
+.des img{
+    height: 450px;
 }
 
 .one #name{
     font-family: 'Playfair Display';
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 300;
     letter-spacing: 2px;
     margin: 0;
+    color: #001e98;
     
 }
 
 .one p{
-    font-size: 35px;
+    font-size: 25px;
     font-family: 'Playfair Display';
 }
 
-#scrolldown{
+/**#scrolldown{
     font-size: 30px;
     font-family:'Playfair Display';
     background-color: rgb(198, 242, 213);
@@ -96,6 +117,7 @@ body{
     border-style: none;
     transition: transform 0.4s ease-in-out;
 }
+    
 
 #scrolldown:hover{
     cursor: pointer;
@@ -105,6 +127,7 @@ body{
     background-color:rgb(133, 130, 59);
     color: #ffffff;
 }
+**/
 
 .websites{
     font-size: 40px;
@@ -272,10 +295,10 @@ body{
 /**about*/
 .notice{
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 50px;
     padding: 50px;
-    font-family:fantasy;
+    font-family: "Comfortaa", sans-serif;
     line-height: 45px;
 }
 
@@ -982,6 +1005,394 @@ hr{
     font-family: 'Poppins', sans-serif;
     font-size: 19px;
 }
+
+/**fitmatch**/
+.fm-body{
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.fitmatch img{
+    height: 400px;
+}
+
+#top-fm{
+    margin: 60px;
+}
+
+.fm-body p, .fm-body ul{
+    font-family: "Nunito", sans-serif;
+    line-height: 30px;
+    font-size: 17px;
+}
+
+.problem p em{
+    font-weight: bold;
+    font-style: normal;
+}
+
+.fitmatch{
+    background: linear-gradient(to bottom, #ffc0b0, #feb47b);
+    height: 550px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+
+#heading{
+    font-size: 40px;
+    padding: 0px;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 80px;
+    font-weight: 400;
+    letter-spacing: 8px;
+    
+}
+
+.description{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.description p{
+    font-family: "Comfortaa", sans-serif;
+    font-size: 18px;
+}
+
+.description h3, .section h3{
+    font-family: "Noto Sans Duployan", sans-serif;
+    font-size: 15px;
+    margin-bottom: -10px;
+}
+
+.section h3{
+    color: rgb(218, 142, 1);
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+#fm{
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.pictures img{
+    height: 300px;
+    margin-bottom: 15px;
+}
+
+.pictures{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.pictures figcaption{
+    font-family: "Comfortaa", sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.findings-total{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+    column-gap: 60px;
+    row-gap: 40px; /* row-gap column-gap */
+    max-width: 1000px; /* keeps grid from overflowing too wide */
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#find{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    gap: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    width: 100%;
+    word-wrap: break-word;
+    border: 1px solid gray;
+    border-radius: 15px; 
+
+}
+
+
+#find p{
+    margin: 0px;
+    font-size: 15px;
+}
+
+.findings-total img{
+    height: 50px;
+}
+
+
+.sketches{
+    display: flex;
+    flex-direction: row;
+}
+
+.sketches img{
+    height: 300px;
+}
+
+/* Headings row */
+.headings {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr; /* same as .pair */
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto 20px auto;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.headings h4{
+  margin: 0px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.headings :first-child{
+    margin-left: 20px;
+}
+
+.headings :last-child{
+    margin-right: 15px;
+}
+
+/* Main container */
+.oppo {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Each pair row */
+.pair {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; 
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.point {
+  background-color: rgba(186, 68, 68, 0.126);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.opportunity {
+  background-color: rgba(82, 205, 82, 0.109);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.arrow img {
+  height: 50px;
+  display: block;
+  margin: 0 auto;  
+}
+
+#point-heading{
+    margin: 0px;
+    color: red;
+    font-weight: bold;
+}
+
+.pair p{
+    margin: 0px;
+}
+
+.final-sketches{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#launch{
+    background-color: #fce9da;
+    padding-right: 100px;
+}
+
+#feed{
+    background-color: #f0b07862;
+}
+
+#review{
+    background-color: #fce9da;
+    padding-right: 100px;
+}
+
+.screen{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;      /* full viewport width */
+    margin-left: -150px;
+    margin-bottom: 0;
+    padding: 50px;
+    align-items: center;
+    gap: 70px;
+}
+
+.screens{
+    display:flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.screens img{
+    height: 500px;
+}
+
+.pain-solution{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#pain-title{
+    font-size: 20px;
+    color: rgba(255, 40, 40, 0.721);
+}
+
+#sol-title{
+    font-size: 20px;
+    color: rgba(3, 112, 3, 0.493);
+}
+
+/**rocket**/
+.simulator{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+#rocket-title{
+    font-size: 25px;
+}
+
+.rocket-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* full screen height */
+  width: 100vw;
+  overflow: hidden;
+}
+
+.left {
+ flex: 0.4; /* make left side smaller */
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.right {
+  flex: 1;
+  background: linear-gradient(to top, #e0f7ff, #001e98);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end; /* ensures rocket starts from the bottom */
+  justify-content: center;
+}
+
+#sky {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+#rocket {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  height: 150px
+}
+
+
+.inputs{
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.inputs input {
+  width: 100px;
+  height: 40px;
+  padding: 5px;
+  background-color: rgba(230, 243, 249, 0.763);
+  border: none;
+  border-radius: 15px;
+}
+
+.equation{
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #001e98;
+}
+
+
+.rocket-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+#rbutton{
+    margin-top: 10px;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 15px;
+    border-style: none;
+    background-color: rgb(247, 208, 214);
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+#rbutton:hover {
+  background-color: rgba(247, 208, 214, 0.564);
+  transform: scale(1.05);
+}
+
+#output {
+  margin-top: 20px;
+  color: red;
+  max-height: 200px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
 
 @media only screen and (max-width: 768px) {
     .one ul {

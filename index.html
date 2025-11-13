@@ -4,6 +4,11 @@
 <head>
     <title>Home</title>
     <link rel= "stylesheet" type="text/css" href="styles/site.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..
+700&family=Londrina+Shadow&family=Noto+Sans+Duployan:wght@400;700&family=Nunito:ital,
+wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,27 +21,45 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">Projects</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="art.html">Art</a></li>
-            <li><a href="https://drive.google.com/file/d/1s8ACDg1jfk1AbLOFsMcXgZycfJGfsRyQ/view?usp=sharing">Resume</a></li>
+            <li><a href="index.html">PROJECTS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="art.html">ART</a></li>
+            <li><a href="https://drive.google.com/file/d/1s8ACDg1jfk1AbLOFsMcXgZycfJGfsRyQ/view?usp=sharing">RESUME</a></li>
+            <li id="scrolldown">CONTACT</li>
         </ul>
     </nav>
     
     <div class="des">
-        <h1 id="name">Valerie Beriquette</h1>
-        <p>Undergraduate student at Cornell University dedicated to front-end development and UX design.</p>
-        <p>View some of my projects below!</p>
-        
-    
-        <button id="scrolldown">Contact</button>
+        <img src="images/valerieberiquette.gif">
+        <p>Undergraduate student at Cornell University dedicated to</p>
+        <p><em>web development</em> and <em>UX design</em></p>
+
        
-           
     </div>
+
+     <p>View some of my projects below!</p>
 </header>
 
     
     <div class="websites">
+
+        <div class="group reveal">
+            <a href="fitmatch.html"><img src="images/fitmatchpreview.png" alt="wesbite"></a>
+            
+            <div class="info">
+                <a href="fitmatch.html"><h2>FitMatch</h2></a>
+                
+                <p id="first">A social shopping platform for where authenticity meets personalization. Semester project
+                focusing on qualitive user research and design methods.
+                </p>
+                    <div class="topic">
+                        <p id="ur">UX Research</p> 
+                        <p id="d">Design</p>
+                        <p id="p">Prototyping</p>
+                    </div>
+            </div>
+        </div>
+
         <div class="group reveal">
             <a href="https://valberri121.wixsite.com/website-1"><img src="images/karebare.png" alt="wesbite"></a>
             
@@ -56,6 +79,23 @@
             </div>
         </div>
 
+        <div class="group reveal">
+            <a href="rocket.html"><img src="images/rocketpreview.png" alt="wesbite"></a>
+            
+            <div class="info">
+                <a href="rocket.html"><h2>Rocket Simulator</h2></a>
+                
+                <p id="first">A rocket simulator reflecting Isaac Newton's Laws of Motion
+    
+                </p>
+                    <div class="topic">
+                        <p id="p">Prototyping</p>
+                        <p id="c">Code</p>
+                    </div>
+            </div>
+        </div>
+        
+
 
 
         <div class="group reveal">
@@ -64,8 +104,8 @@
             <div class="info">
                 <a href="smartteddy.html"><h2>Smart Teddy</h2></a>
                 
-                <p id="first">Semester project designing a product for students who miss their pets.
-                    Structured around the human centered design process.
+                <p id="first">Product for college students who miss their pets.
+                    Semester project structured around the human centered design process.
                 </p>
                     <div class="topic">
                         <p id="ur">UX Research</p> 
