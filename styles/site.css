@@ -1092,6 +1092,8 @@ hr{
     flex-direction: row;
     gap: 30px;
     margin-bottom: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
     text-align: center;
     align-items: center;
     justify-content: center;
