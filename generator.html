@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AI Image Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/site.css">
+</head>
+
+<body>
+    <div class="generator-page">
+        <div class="generator-intro">
+            <h1>AI Image Generator</h1>
+            <p>Describe the image you want to create, then generate a visual based on your prompt.</p>
+        </div>
+
+        <div class="generator-layout">
+            <div class="generator-panel">
+                <h2>Create a Prompt</h2>
+
+                <div id="generate-image-form" class="form-container">
+                    <form class="my-form">
+                        <label for="input-value">Image description</label>
+                        <input id="input-value"
+                               class="form-input form-controls"
+                               type="text"
+                               placeholder="Example: a cozy study room with plants">
+
+                        <button type="submit" class="image-generate-btn form-controls">
+                            Generate Image
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="images-visible" class="image-container">
+                <p id="imageContainerText">Your generated image will appear here.</p>
+                <img id="generated-image"
+                     class="my-generated-image"
+                     src=""
+                     alt="Generated result">
+            </div>
+        </div>
+    </div>
+    <script src="scripts/generator.js"></script>
+</body>
+
+</html>
