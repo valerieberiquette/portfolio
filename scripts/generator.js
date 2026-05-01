@@ -19,10 +19,19 @@ async function fetchImages(prompt) {
             body: JSON.stringify({ prompt: prompt })
         });
 
-        const data = await response.json();
+        const responseText = await response.text();
+        const data = parseJsonResponse(responseText);
 
         if (!response.ok) {
-            throw new Error(data.error || 'The image could not be generated.');
+            const fallbackMessage = responseText
+                ? `The image function returned ${response.status}: ${responseText.slice(0, 160)}`
+                : `The image function returned ${response.status} with no response body.`;
+
+            throw new Error(data.error || fallbackMessage);
+        }
+
+        if (!data.image) {
+            throw new Error('No image was returned. Please try another prompt.');
         }
 
         imageContainer.style.display = 'flex';
@@ -32,6 +41,18 @@ async function fetchImages(prompt) {
         statusText.innerText = error.message;
     } finally {
         submitButton.disabled = false;
+    }
+}
+
+function parseJsonResponse(responseText) {
+    if (!responseText) {
+        return {};
+    }
+
+    try {
+        return JSON.parse(responseText);
+    } catch (error) {
+        return {};
     }
 }
 

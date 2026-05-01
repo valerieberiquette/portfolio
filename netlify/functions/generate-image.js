@@ -1,29 +1,20 @@
 exports.handler = async function (event) {
     if (event.httpMethod !== 'POST') {
-        return {
-            statusCode: 405,
-            body: JSON.stringify({ error: 'Only POST requests are allowed.' })
-        };
+        return sendJson(405, { error: 'Only POST requests are allowed.' });
     }
 
-    const apiKey = process.env.openai_key;
+    const apiKey = process.env.OPENAI_API_KEY || process.env.openai_key;
 
     if (!apiKey) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: 'Missing OpenAI API key.' })
-        };
+        return sendJson(500, { error: 'The OpenAI API key is missing in Netlify. Add OPENAI_API_KEY to your site environment variables.' });
     }
 
     try {
         const requestBody = JSON.parse(event.body || '{}');
-        const prompt = requestBody.prompt;
+        const prompt = requestBody.prompt?.trim();
 
         if (!prompt) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: 'Please enter an image description.' })
-            };
+            return sendJson(400, { error: 'Please enter an image description.' });
         }
 
         const openAiResponse = await fetch('https://api.openai.com/v1/images/generations', {
@@ -39,27 +30,47 @@ exports.handler = async function (event) {
             })
         });
 
-        const result = await openAiResponse.json();
+        const openAiText = await openAiResponse.text();
+        const result = parseJsonResponse(openAiText);
 
         if (!openAiResponse.ok) {
-            return {
-                statusCode: openAiResponse.status,
-                body: JSON.stringify({
-                    error: result.error?.message || 'OpenAI could not generate the image.'
-                })
-            };
+            return sendJson(openAiResponse.status, {
+                error: result.error?.message || `OpenAI returned ${openAiResponse.status} without a readable error message.`
+            });
         }
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify({
-                image: result.data[0].b64_json
-            })
-        };
+        const image = result.data?.[0]?.b64_json;
+
+        if (!image) {
+            return sendJson(502, { error: 'OpenAI did not return an image.' });
+        }
+
+        return sendJson(200, { image: image });
     } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: 'Something went wrong while generating the image.' })
-        };
+        return sendJson(500, {
+            error: error.message || 'Something went wrong while generating the image.'
+        });
     }
 };
+
+function parseJsonResponse(responseText) {
+    if (!responseText) {
+        return {};
+    }
+
+    try {
+        return JSON.parse(responseText);
+    } catch (error) {
+        return {};
+    }
+}
+
+function sendJson(statusCode, body) {
+    return {
+        statusCode: statusCode,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    };
+}
