@@ -6,9 +6,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Londrina+Shadow&family=Noto+Sans+Duployan:wght@400;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div class="one">
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">PROJECTS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="https://drive.google.com/file/d/1s8ACDg1jfk1AbLOFsMcXgZycfJGfsRyQ/view?usp=sharing">RESUME</a></li>
+            <li id="scrolldown">CONTACT</li>
+        </ul>
+    </nav>
+    </div>
+
     <div class="generator-page">
         <div class="generator-intro">
             <h1>AI Image Generator</h1>
@@ -27,8 +47,14 @@
                                type="text"
                                placeholder="Example: a cozy study room with plants">
 
-                        <button type="submit" class="image-generate-btn form-controls">
-                            Generate Image
+                        <button type="submit" class="image-generate-btn sparkle-button form-controls">
+                            <span class="backdrop"></span>
+                            <svg class="sparkle" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2L14.2 8.8L21 11L14.2 13.2L12 20L9.8 13.2L3 11L9.8 8.8L12 2Z"></path>
+                                <path d="M19 15L20 18L23 19L20 20L19 23L18 20L15 19L18 18L19 15Z"></path>
+                                <path d="M5 3L5.8 5.2L8 6L5.8 6.8L5 9L4.2 6.8L2 6L4.2 5.2L5 3Z"></path>
+                            </svg>
+                            <span class="text">Generate Image</span>
                         </button>
                     </form>
                 </div>

@@ -3,11 +3,7 @@ exports.handler = async function (event) {
         return sendJson(405, { error: 'Only POST requests are allowed.' });
     }
 
-    const apiKey = process.env.OPENAI_API_KEY || process.env.openai_key;
-
-    if (!apiKey) {
-        return sendJson(500, { error: 'The OpenAI API key is missing in Netlify. Add OPENAI_API_KEY to your site environment variables.' });
-    }
+    const apiKey = process.env.OPENAI_API_KEY;
 
     try {
         const requestBody = JSON.parse(event.body || '{}');

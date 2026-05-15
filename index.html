@@ -25,40 +25,67 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
         <ul>
             <li><a href="index.html">PROJECTS</a></li>
             <li><a href="about.html">ABOUT</a></li>
-            <li><a href="art.html">ART</a></li>
             <li><a href="https://drive.google.com/file/d/1s8ACDg1jfk1AbLOFsMcXgZycfJGfsRyQ/view?usp=sharing">RESUME</a></li>
             <li id="scrolldown">CONTACT</li>
         </ul>
     </nav>
 
-    <p>*still under construction*</p>
-    <div class="des">
-        <img src="images/valerieberiquette.png">
-        <p>Undergraduate student at Cornell University dedicated to</p>
-        <p><em>web development</em> and <em>UX design</em></p>
+    <div class="hero-row">
+        <div class="animation">
+            <h2>Valerie Beriquette</h2>
+            <img class="animation-flower" src="images/flower.gif" alt="">
+            <img class="animation-grass" src="images/grass.gif" alt="">
+            <img class="animation-gear animation-gear-left" src="images/gear.png" alt="">
+            <img class="animation-ladybug" src="images/ladybug.png" alt="">
+            <img class="animation-gear animation-gear-right" src="images/gear2.png" alt="">
+        </div>
+        <img class="hero-cartoon" src="images/cartoon.jpg" alt="Cartoon portrait of Valerie">
+    </div>
 
+    <div class="des">
+        <p>Cornell University graduate dedicated to</p>
+        <p><em>web development</em> and <em>UX design</em></p>
        
     </div>
 
      <p>View some of my projects below!</p>
 </header>
 
+<div class="terminal-popup" id="terminalPopup">
+  <div class="terminal-window">
+    <div class="terminal-header">
+      <span class="terminal-dot"></span>
+      <span class="terminal-dot"></span>
+      <span class="terminal-dot"></span>
+    </div>
+
+    <h2>ERROR: Portfolio access paused</h2>
+    <p>System requires a manual command before continuing.</p>
+
+    <p class="terminal-hint">Type "openportfolio" and press enter.</p>
+
+    <form id="terminalForm" class="terminal-input-row">
+      <label for="terminalInput" class="terminal-prompt">visitor@portfolio:~$</label>
+      <input id="terminalInput" type="text" autocomplete="off" aria-label="Type open portfolio">
+    </form>
+    
+  </div>
+</div>
     
     <div class="websites">
 
         <div class="group reveal">
-            <a href="generator.html"><img src="images/fitmatchpreview.png" alt="wesbite"></a>
+            <a href="generator.html"><img src="images/generator.png" alt="wesbite"></a>
             
             <div class="info">
-                <a href="generator.html"><h2>AI Generator</h2></a>
+                <a href="generator.html"><h2>AI Image Generator</h2></a>
                 
-                <p id="first">A social shopping platform for where authenticity meets personalization. Semester project
-                focusing on qualitive user research and design methods.
+                <p id="first">Generator that turns written prompts into custom visuals 
+                    using OpenAI API and Netlify to secure API key and handle user requests.
                 </p>
                     <div class="topic">
-                        <p id="ur">UX Research</p> 
+                        <p id="a">AI Integration</p> 
                         <p id="d">Design</p>
-                        <p id="p">Prototyping</p>
                     </div>
             </div>
         </div>
@@ -94,7 +121,7 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
                         <p id="ur">UX Research</p> 
                         <p id="d">Design</p>
                         <p id="p">Prototyping</p>
-                        <p id="a">AI Intergration</p>
+                        <p id="a">AI Integration</p>
                     </div>
             </div>
         </div>
@@ -191,7 +218,8 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
 
     <script src ="scripts/appear.js"></script>
     <script src ="scripts/scroll.js"></script>
+    <script src ="scripts/terminal.js"></script>
+    <script src ="scripts/ladybug.js"></script>
     
 
 </body>
-
