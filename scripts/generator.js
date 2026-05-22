@@ -5,6 +5,11 @@ const generatedImage = document.getElementById('generated-image');
 const imageContainer = document.getElementById('images-visible');
 const submitButton = document.querySelector('.image-generate-btn');
 
+function resizePromptInput() {
+    promptInput.style.height = 'auto';
+    promptInput.style.height = promptInput.scrollHeight + 'px';
+}
+
 async function fetchImages(prompt) {
     statusText.innerText = 'Generating your image...';
     generatedImage.src = '';
@@ -68,3 +73,6 @@ imageForm.addEventListener('submit', function (event) {
 
     fetchImages(prompt);
 });
+
+promptInput.addEventListener('input', resizePromptInput);
+resizePromptInput();

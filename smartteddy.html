@@ -3,10 +3,9 @@
 
 <head>
     <title>Smart Teddy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel= "stylesheet" type="text/css" href="styles/site.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Londrina+Shadow&family=Noto+Sans+Duployan:wght@400;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&display=swap" rel="stylesheet">
@@ -16,11 +15,16 @@
 <body>
 
     <div class="one">
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <nav>
         <ul>
             <li><a href="index.html">PROJECTS</a></li>
             <li><a href="about.html">ABOUT</a></li>
-            <li><a href="https://drive.google.com/file/d/1s8ACDg1jfk1AbLOFsMcXgZycfJGfsRyQ/view?usp=sharing">RESUME</a></li>
+            <li><a href="https://drive.google.com/file/d/1y4sU3Om4g2r_fkXsTmJ6SaZI5YjBpbfq/view?usp=sharing">RESUME</a></li>
             <li id="scrolldown">CONTACT</li>
         </ul>
         </nav>
@@ -28,41 +32,54 @@
 
 
 
-    <div class="header">
+    <div class="smart-page">
+        <div class="smart-hero">
         <img src="images/3450header.jpg" alt="project">
-
-        
-
-        <div class="under">
-            
-            <h2>Smart Teddy</h2>
-            <p>&#183;</p>
-            <p>Semester group project based on the human centered design process</p>
-            <p>&#183;</p>
-            <p>12 weeks</p>
-            
         </div>
+
+        <div class="top" id="top-fm">
+        <h2 id="st-heading">Smart Teddy</h2>
+        <div class="description">
+            <div class="team">
+                <h3>TEAM</h3>
+                <p>4 Members</p>
+            </div>
+
+        <div class="role">
+            <h3>ROLE</h3>
+            <p>Designer/Researcher</p>
+        </div>
+
+        <div class="timeline">
+            <h3>TIMELINE</h3>
+            <p>Sep 2023-Dec 2023</p>
+        </div>
+
+        <div class="tools">
+            <h3>TOOLS</h3>
+            <p>Figma, Miro, Procreate</p>
+        </div>
+
     </div>
 
-    <hr>
+</div>
+    <hr class="smart-divider">
 
-    <div class="intro">
+    <div class="smart-intro">
         <p>Smart Teddy is designed for college students who miss their pets back home, offering them a way to interact and connect virtually 
             for the same sense of comfort and companionship they’d experience in person.</p>
         <p>The project was divided into multiple phases, emphasizing the value of each step in the design process.</p>
-        <p>Group Count: 4 (including myself)</p>
     </div>
 
-    <section class="step">
+    <section class="smart-step">
         <h2><em>Step 1:</em> Identifying project topic and user group</h2>
-        <p id="center">Brainstorming various problems and solutions. The group had to come to a consensus for the topic.</p>
+        <p id="center">We brainstormed various problems and potential solutions before reaching a consensus on our project topic.</p>
 
         <section class="squares">
         <div class="group1">
             <h3>Problem Space</h3>
-            <p>College is an extremely stressful time, but most students don’t have 
-                pets during college. Despite it being helpful, it’s difficult for Cornell students 
-                to seek animal companionship when they’re stressed or sad.  </p>
+            <p>College can be an extremely stressful time, yet many students are unable to have pets on campus. Although animal 
+                companionship can be comforting, Cornell students may find it difficult to access that support when they feel stressed or sad.</p>
         </div>
 
         <div class="group2">
@@ -73,20 +90,19 @@
 
     </section>
 
-    <section class="step">
+    <section class="smart-step">
         <h2><em>Step 2:</em> Interview plan and protocol</h2>
-        <p id="center">Conducting eight 30-minute contextual interviews focusing on participants within the specified user group. </p>
+        <p id="center">I conducted two 30-minute contextual interviews with participants from our target user group, while our group conducted eight interviews in total.</p>
         <p id="side1"><em>Interview Goal:</em> To gather information about the students’ general experiences with pets, both with their own, and with pets 
             they may or may not have been able to interact with on a college campus.</p>
     </section>
 
-    <section class="step">
+    <section class="smart-step">
         <h2><em>Step 3:</em> Data Analysis</h2>
-        <p id="center">Based on the data collected from the interviews, we created an affinity diagram to group the information 
-            collected into synthesized themes and insights. We then used these insights to analyze an in-depth understanding of any 
-            common behaviors, challenges and attitudes throughout the user group.</p>
+        <p id="center">Based on the interview data, we created an affinity diagram to organize our findings into themes and insights. 
+            We then used these insights to better understand common behaviors, challenges, and attitudes within our user group.</p>
 
-        <p id="side2">Screenshots of the afinity diagram on a Miro Board:</p>
+        <p id="side2">Screenshots of the affinity diagram on Miro:</p>
 
         <div class="miro">
             <img src="images/miro1.png" alt="screenshot">
@@ -99,12 +115,12 @@
             
         
             <div class="insights">
-                <h3>Some insights and observations:</h3>
+                <h3>Key insights and observations:</h3>
                 <ul>
-                    <li><em>Insight 1:</em> Users tend to look at pictures of their pet or talk about their pet with family and friends when they miss their pet.</li>
+                    <li><em>Insight 1:</em> Users often look at photos of their pets or talk about them with family and friends when they miss them.</li>
                     <li><em>Insight 2:</em> Users tend to feel a personal connection to their specific pet that cannot be replaced.</li>
-                    <li><em>Insight 3:</em> Users tend to have busy schedules with school work that hinders their ability to have a pet at school, especially due to the 
-                    attention demanded by pets such as dogs.</li>
+                    <li><em>Insight 3:</em> Users often have busy academic schedules that make it difficult to care for a pet at school, especially pets that 
+                        require significant attention, such as dogs.</li>
                 </ul>
             </div>
 
@@ -119,9 +135,9 @@
 
     </section>
 
-    <section class="step">
+    <section class="smart-step">
         <h2><em>Step 4:</em> Brainstorming</h2>
-        <p id="center">As a group, we considered multiple product ideas and discussed which product would be unique, creative and sufficient for our users. </p>
+        <p id="center">As a group, we explored multiple product ideas and discussed which solution would be the most unique, creative, and useful for our users. </p>
         
         <p id="side2">We sketched out the idea of our product:</p>
         
@@ -130,46 +146,57 @@
         <img src="images/dispenser.jpg" alt="dispenser">
         </div>
 
-        <p id="side3"><em>Our Design:</em> A customizable stuffed animal that comes with a treat dispenser to set up back at home. 
-            The stuffed animal allows you to see and interact with your pet live through it’s built in LCD touch screen. 
-            Giving treats to your pet on command, taking snapshots, and updating your family on the dispenser status all make a memorable 
-            experience for you and your loved one!</p>
+        <p id="side3"><em>Our Design:</em> Our Design: A customizable stuffed animal paired with a treat dispenser that 
+            users can set up at home. The stuffed animal allows users to see and interact with their pets live through its built-in LCD touchscreen. 
+            Features such as remote treat dispensing, snapshots, and dispenser status updates create a meaningful experience for both users and their pets.</p>
 
         <div class="goals">
-        <p>We then connected our user goals to a specific task that can be found in the design. We stated the task, a scenerio, and a story board 
-            showing how the user will complete the task using the product. </p>
+        <p>We then connected our user goals to a specific task within the design. We outlined the task, created a scenario, and developed a storyboard showing 
+            how a user would complete the task with the product. </p>
             <embed src="files/prototype.pdf" type="application/pdf">
         </div>
     </section>
 
-        <section class="step">
+        <section class="smart-step">
             <h2><em>Step 5:</em> Prototyping</h2>
 
-            <p id="center">Created a mid to high-fidelity prototype after receiving feedback for mutiple prototypes from each member of the group. 
-                This prototype would represent the application on the stuffed animals screen since there is no app connected with this product.</p>
+            <p id="center">Created a mid- to high-fidelity prototype based on feedback from multiple group iterations. Since the product does not include a connected app, the prototype represents the stuffed animal’s 
+                screen-based interface and user experience.</p>
 
 
-                <div class="figma">
-                    <a href="https://www.figma.com/proto/30hhyI6gvR7GG9R2hfMPyz/Smart-Teddy?type=design&node-id=1-21&t=Vb4Z3Tm4E6dzreYT-1&scaling=min-zoom&page-id=0%3A1&mode=design">
-                        <h3>Our Figma Prototype</h3>
-                        <img src="images/figma4.png" alt="prototype"></a>
+                <div class="smart-prototype fm-prototype">
+                    <div class="fm-prototype-text">
+                        <h3>PROTOTYPE</h3>
+                        <p>Explore the Smart Teddy screen prototype in Figma.</p>
+                        <a class="btn-31" href="https://www.figma.com/proto/30hhyI6gvR7GG9R2hfMPyz/Smart-Teddy?type=design&node-id=1-21&t=Vb4Z3Tm4E6dzreYT-1&scaling=min-zoom&page-id=0%3A1&mode=design" target="_blank" rel="noopener noreferrer">
+                            <span class="text-container">
+                                <span class="text">View Prototype</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="fm-prototype-image">
+                        <img src="images/figma4.png" alt="Smart Teddy prototype preview">
+                    </div>
                 </div>
 
-            <p id="center">We explained our prototyping and design descisions more in depth, stating any tradeoffs or alternatives, UX principles and common UI patters.</p>
+        
         </section>
+
+        </div>
 
         <div class="bottom">
             <h2>Contact information:</h2>
             <div class="icons">
                 <a href="https://www.linkedin.com/in/valerie-beriquette-278831252/"><img src="images/linkedin.png"></a>
                 
-                <a href="mailto:vlb49@cornell.edu"><img src="images/mail.png"></a>
+                <a href="mailto:valerieberiquette@gmail.com"><img src="images/mail.png"></a>
                 
-                <a href="https://drive.google.com/file/d/1s8ACDg1jfk1AbLOFsMcXgZycfJGfsRyQ/view?usp=sharing"><img src="images/resume.png"></a>
+                <a href="https://drive.google.com/file/d/1y4sU3Om4g2r_fkXsTmJ6SaZI5YjBpbfq/view?usp=sharing"><img src="images/resume.png"></a>
             </div>
-            <p>This website was coded and designed by me from scratch on VScode!</p>
+            <p>This website was coded and designed by me from scratch on VS Code!</p>
         </div>
 
         <script src ="scripts/scroll.js"></script>
+        <script src ="scripts/nav.js"></script>
 </body>
-
