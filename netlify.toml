@@ -1,0 +1,4 @@
+[[rate_limits]]
+  path = "/.netlify/functions/generate-image"
+  window_limit = 5
+  window_size = "1m"

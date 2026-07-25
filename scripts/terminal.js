@@ -3,6 +3,7 @@ const terminalForm = document.getElementById('terminalForm');
 const terminalInput = document.getElementById('terminalInput');
 const terminalStorageKey = 'portfolioTerminalUnlocked';
 
+/*
 if (localStorage.getItem(terminalStorageKey) === 'true') {
     terminalPopup.classList.add('is-hidden');
 } else {
@@ -17,3 +18,5 @@ terminalForm.addEventListener('submit', function (event) {
         terminalPopup.classList.add('is-hidden');
     }
 });
+*/
+
