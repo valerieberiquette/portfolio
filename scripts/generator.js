@@ -85,16 +85,14 @@ imageForm.addEventListener('submit', async function (event) {
     submitButton.disabled = true;
 
     try {
-        // 🛡️ CRITICAL FIX: Explicitly tell Turnstile to execute and generate a token right now
         if (typeof turnstile !== 'undefined') {
             
-            // 1. If an old token exists, reset it to ensure freshness
             let turnstileToken = turnstile.getResponse();
             
-            // 2. If it hasn't fired yet, explicitly await its execution callback block
             if (!turnstileToken) {
                 turnstileToken = await new Promise((resolve) => {
-                    turnstile.execute('.cf-turnstile', {
+                    // 🛡️ FIX: Target the exact container ID string here
+                    turnstile.execute('#my-turnstile-container', {
                         callback: function (token) {
                             resolve(token);
                         },
@@ -105,18 +103,15 @@ imageForm.addEventListener('submit', async function (event) {
                 });
             }
 
-            // 3. Evaluate token health
             if (!turnstileToken) {
                 statusText.innerText = 'Security verification failed. Please try again.';
                 submitButton.disabled = false;
                 return;
             }
 
-            // Route both variables cleanly to your fetch wrapper function
             fetchImages(prompt, turnstileToken);
             
         } else {
-            // Fallback safety catch block if script connection drops
             throw new Error('Security module failed to load. Check your internet connection.');
         }
 
