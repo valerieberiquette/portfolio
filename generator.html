@@ -35,6 +35,7 @@
 
     <div class="generator-page">
         <div class="generator-intro">
+            <p>*WORKING ON A BUG*</p>
             <h1>AI Image Generator</h1>
             <p>Describe the image you want to create, then generate a visual based on your prompt.</p>
         </div>
@@ -49,7 +50,9 @@
                         <textarea id="input-value"
                                   class="form-input form-controls"
                                   rows="2"
+                                  maxlength="600"
                                   placeholder="Example: a cozy study room with plants"></textarea>
+                        <p id="prompt-counter" class="prompt-counter">0/600</p>
 
                         <button type="submit" class="image-generate-btn sparkle-button form-controls">
                             <span class="backdrop"></span>
@@ -61,7 +64,7 @@
                             <span class="text">Generate Image</span>
                         </button>
                         
-                        <div id="my-turnstile-container" class="cf-turnstile" data-sitekey="0x4AAAAAAD9uBH8sAOIH6Vn4" data-size="invisible"></div>
+                        <div id="my-turnstile-container" class="cf-turnstile" data-sitekey="0x4AAAAAAD9uBH8sAOIH6Vn4" data-appearance="interaction-only"></div>
                     </form>
                 </div>
             </div>

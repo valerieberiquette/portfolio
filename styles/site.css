@@ -2065,10 +2065,16 @@ hr{
     padding: 14px;
     color: rgb(20, 25, 20);
     background-color: #d5d2e967;
-    margin-bottom: 20px;
     line-height: 1.4;
     resize: none;
     overflow: hidden;
+}
+
+.prompt-counter {
+    margin: -8px 0 20px;
+    color: rgb(72, 78, 72);
+    font-size: 13px;
+    text-align: right;
 }
 
 .image-generate-btn {

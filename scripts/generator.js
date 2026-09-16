@@ -4,10 +4,16 @@ const statusText = document.getElementById('imageContainerText');
 const generatedImage = document.getElementById('generated-image');
 const imageContainer = document.getElementById('images-visible');
 const submitButton = document.querySelector('.image-generate-btn');
+const promptCounter = document.getElementById('prompt-counter');
+const maxPromptLength = 600;
 
 function resizePromptInput() {
     promptInput.style.height = 'auto';
     promptInput.style.height = promptInput.scrollHeight + 'px';
+}
+
+function updatePromptCounter() {
+    promptCounter.innerText = `${promptInput.value.length}/${maxPromptLength}`;
 }
 
 // 1. Updated: Accept the security token as an additional parameter
@@ -46,9 +52,9 @@ async function fetchImages(prompt, token) {
 
         imageContainer.style.display = 'flex';
         statusText.innerText = 'Here is your generated image:';
-        generatedImage.src = `data:image/png;base64,${data.image}`;
+        generatedImage.src = `data:${data.mimeType || 'image/png'};base64,${data.image}`;
     } catch (error) {
-        statusText.innerText = error.message;
+        statusText.innerText = getFriendlyErrorMessage(error.message);
     } finally {
         submitButton.disabled = false;
         
@@ -57,6 +63,14 @@ async function fetchImages(prompt, token) {
             turnstile.reset();
         }
     }
+}
+
+function getFriendlyErrorMessage(message) {
+    if (message && message.toLowerCase().includes('safety system')) {
+        return 'That prompt could not be generated. Please try a safer or more general description.';
+    }
+
+    return message;
 }
 
 function parseJsonResponse(responseText) {
@@ -122,5 +136,9 @@ imageForm.addEventListener('submit', async function (event) {
 });
 
 
-promptInput.addEventListener('input', resizePromptInput);
+promptInput.addEventListener('input', function () {
+    resizePromptInput();
+    updatePromptCounter();
+});
 resizePromptInput();
+updatePromptCounter();
