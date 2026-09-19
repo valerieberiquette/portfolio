@@ -3,6 +3,7 @@ const promptInput = document.getElementById('input-value');
 const statusText = document.getElementById('imageContainerText');
 const generatedImage = document.getElementById('generated-image');
 const imageContainer = document.getElementById('images-visible');
+const imageLoader = document.getElementById('image-loader');
 const submitButton = document.querySelector('.image-generate-btn');
 const promptCounter = document.getElementById('prompt-counter');
 const maxPromptLength = 600;
@@ -19,6 +20,7 @@ function updatePromptCounter() {
 // 1. Updated: Accept the security token as an additional parameter
 async function fetchImages(prompt, token) {
     statusText.innerText = 'Generating your image...';
+    imageLoader.hidden = false;
     generatedImage.src = '';
     submitButton.disabled = true;
 
@@ -56,6 +58,7 @@ async function fetchImages(prompt, token) {
     } catch (error) {
         statusText.innerText = getFriendlyErrorMessage(error.message);
     } finally {
+        imageLoader.hidden = true;
         submitButton.disabled = false;
         
         // 3. New: Always clear the expired token container so recruiters can submit subsequent inputs safely

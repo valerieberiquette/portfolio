@@ -8,10 +8,8 @@
     <link rel= "stylesheet" type="text/css" href="styles/site.css">
  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@400;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..
-700&family=Londrina+Shadow&family=Noto+Sans+Duployan:wght@400;700&family=Nunito:ital,
-wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&amp;family=Londrina+Shadow&amp;family=Noto+Sans+Duployan:wght@400;700&amp;family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;family=Playfair+Display:ital@0;1&amp;family=Rationale&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -52,7 +50,11 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
        
     </div>
 
-     <p>View some of my projects below!</p>
+    <div class="hero-scroll-cue" aria-hidden="true">
+        <span class="chevron"></span>
+        <span class="chevron"></span>
+        <span class="chevron"></span>
+    </div>
 </header>
 
 <div class="terminal-popup is-hidden" id="terminalPopup" aria-hidden="true">
@@ -76,15 +78,18 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
   </div>
 </div>
     
-    <div class="websites">
+    <main class="websites">
+        <section class="project-section" aria-labelledby="independent-projects">
+            <h2 id="independent-projects" class="project-section-title">Independent Projects</h2>
+            <div class="project-grid project-grid-independent">
 
         <div class="group reveal">
-            <a href="generator.html"><img src="images/generator.png" alt="wesbite"></a>
+            <a href="generator.html"><img src="images/valora.png" alt="wesbite"></a>
             
             <div class="info">
-                <a href="generator.html"><h2>AI Image Generator</h2></a>
+                <a href="generator.html"><h3>Valora AI</h3></a>
                 
-                <p id="first">Generator that turns written prompts into custom visuals 
+                <p id="first">Meet Valora, an Image Generator that turns written prompts into custom visuals 
                     using OpenAI API and Netlify to secure API key and handle user requests.
                 </p>
                     <div class="topic">
@@ -95,10 +100,24 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
         </div>
 
         <div class="group reveal">
+            <a href="rocket.html"><img src="images/rocketpreview.png" alt="wesbite"></a>
+            <div class="info">
+                <a href="rocket.html"><h3>Rocket Simulator</h3></a>
+                <p id="first">A rocket simulator reflecting Isaac Newton's Laws of Motion</p>
+                <div class="topic"><p id="p">Prototyping</p><p id="c">Code</p></div>
+            </div>
+        </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="ux-design-projects">
+            <h2 id="ux-design-projects" class="project-section-title">UX Design</h2>
+            <div class="project-grid project-grid-ux">
+        <div class="group reveal">
             <a href="fitmatch.html"><img src="images/fitmatchpreview.png" alt="wesbite"></a>
             
             <div class="info">
-                <a href="fitmatch.html"><h2>FitMatch</h2></a>
+                <a href="fitmatch.html"><h3>FitMatch</h3></a>
                 
                 <p id="first">A social shopping platform for where authenticity meets personalization. Semester project
                 focusing on qualitive user research and design methods.
@@ -115,7 +134,7 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
             <a href="https://valberri121.wixsite.com/website-1"><img src="images/karebare.png" alt="wesbite"></a>
             
             <div class="info">
-                <a href="https://valberri121.wixsite.com/website-1"><h2>KareBare</h2></a>
+                <a href="https://valberri121.wixsite.com/website-1"><h3>KareBare</h3></a>
                 
                 <p id="first">An AI chatbot designed to help teenagers aged 12-18 use social media safely. Semester project reflecting Human Computer Interaction
                     Design (group website created on Wix).
@@ -130,21 +149,6 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
             </div>
         </div>
 
-        <div class="group reveal">
-            <a href="rocket.html"><img src="images/rocketpreview.png" alt="wesbite"></a>
-            
-            <div class="info">
-                <a href="rocket.html"><h2>Rocket Simulator</h2></a>
-                
-                <p id="first">A rocket simulator reflecting Isaac Newton's Laws of Motion
-    
-                </p>
-                    <div class="topic">
-                        <p id="p">Prototyping</p>
-                        <p id="c">Code</p>
-                    </div>
-            </div>
-        </div>
         
 
 
@@ -153,7 +157,7 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
             <a href="smartteddy.html"><img src="images/figma.png" alt="wesbite"></a>
             
             <div class="info">
-                <a href="smartteddy.html"><h2>Smart Teddy</h2></a>
+                <a href="smartteddy.html"><h3>Smart Teddy</h3></a>
                 
                 <p id="first">Product for college students who miss their pets.
                     Semester project structured around the human centered design process.
@@ -166,10 +170,16 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
             </div>
         </div>
 
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="dynamic-sites-projects">
+            <h2 id="dynamic-sites-projects" class="project-section-title">Dynamic Sites</h2>
+            <div class="project-grid project-grid-dynamic">
         <div class="group reveal">
             <a href="https://github.com/valberri/Websites/tree/main/vlb49-project3"><img src="images/catalog.png" alt="wesbite"></a>
             <div class="info">
-                <a href="https://github.com/valberri/Websites/tree/main/vlb49-project3"><h2>Album Catalog</h2></a>
+                <a href="https://github.com/valberri/Websites/tree/main/vlb49-project3"><h3>Album Catalog</h3></a>
                 <p id="first">Website catalog that allows users to explore albums by filtering, 
                 while being able to upload their own albums through a self-processing form. Log in sessions
                 required and all information connected to a database.</p>
@@ -183,7 +193,7 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
         <div class="group reveal">
             <a href="https://github.com/valberri/Websites/tree/main/vlb49-project2"><img src="images/mc.png" alt="website"></a>
             <div class="info">
-                <a href="https://github.com/valberri/Websites/tree/main/vlb49-project2"><h2>Minecraft Catalog</h2></a>
+                <a href="https://github.com/valberri/Websites/tree/main/vlb49-project2"><h3>Minecraft Catalog</h3></a>
                 <p id="first">Website catalog and database that allows users to input their own Mincecraft characters
                    and corresponding information through a self-processing form.</p>
                    <div class="topic">
@@ -194,9 +204,9 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
         </div>
 
 
-    </div>
-
-    
+            </div>
+        </section>
+    </main>
 
     <div class="bottom">
         <h2>Contact information:</h2>
@@ -207,7 +217,7 @@ wght@0,200..1000;1,200..1000&family=Playfair+Display:ital@0;1&family=Rationale&d
             
             <a href="images/Resume.pdf"><img src="images/resume.png"></a>
         </div>
-        <p>This website was coded and designed by me from scratch on VS Code!</p>
+        <p>This website was coded and designed by Valerie Beriquette from scratch on VS Code!</p>
     </div>
 
     <script src ="scripts/appear.js"></script>
