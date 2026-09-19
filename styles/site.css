@@ -2122,8 +2122,19 @@ hr{
 
 /**AI image generator*/
 .generator-body {
-    background: #f9eceb url("../images/generator-background.png") center top / cover fixed no-repeat;
+    position: relative;
+    isolation: isolate;
+    background-color: #f9eceb;
     color: #25343c;
+}
+
+.generator-body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url("../images/generator-background.png") center top / cover no-repeat;
+    transform: scaleX(-1);
 }
 
 .generator-page {
