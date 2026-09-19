@@ -2,11 +2,17 @@ const imageForm = document.querySelector('.my-form');
 const promptInput = document.getElementById('input-value');
 const statusText = document.getElementById('imageContainerText');
 const generatedImage = document.getElementById('generated-image');
+const generatedImageWrap = document.getElementById('generated-image-wrap');
+const downloadImage = document.getElementById('download-image');
+const copyImage = document.getElementById('copy-image');
 const imageContainer = document.getElementById('images-visible');
 const imageLoader = document.getElementById('image-loader');
 const submitButton = document.querySelector('.image-generate-btn');
 const promptCounter = document.getElementById('prompt-counter');
 const maxPromptLength = 600;
+let currentImageSource = '';
+let currentImageType = 'image/png';
+let suggestedImageName = 'valora-generated-image.png';
 
 function resizePromptInput() {
     promptInput.style.height = 'auto';
@@ -22,6 +28,8 @@ async function fetchImages(prompt, token) {
     statusText.innerText = 'Generating your image...';
     imageLoader.hidden = false;
     generatedImage.src = '';
+    generatedImageWrap.classList.remove('has-image');
+    currentImageSource = '';
     submitButton.disabled = true;
 
     try {
@@ -54,7 +62,15 @@ async function fetchImages(prompt, token) {
 
         imageContainer.style.display = 'flex';
         statusText.innerText = 'Here is your generated image:';
-        generatedImage.src = `data:${data.mimeType || 'image/png'};base64,${data.image}`;
+        const mimeType = data.mimeType || 'image/png';
+        const imageSource = `data:${mimeType};base64,${data.image}`;
+        const fileExtension = getImageFileExtension(mimeType);
+
+        generatedImage.src = imageSource;
+        currentImageSource = imageSource;
+        currentImageType = mimeType;
+        suggestedImageName = createImageFileName(prompt, fileExtension);
+        generatedImageWrap.classList.add('has-image');
     } catch (error) {
         statusText.innerText = getFriendlyErrorMessage(error.message);
     } finally {
@@ -67,6 +83,122 @@ async function fetchImages(prompt, token) {
         }
     }
 }
+
+function createImageFileName(prompt, extension) {
+    const promptName = prompt
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .slice(0, 50);
+
+    return `${promptName || 'valora-generated-image'}.${extension}`;
+}
+
+function getImageFileExtension(mimeType) {
+    const extensions = {
+        'image/jpeg': 'jpg',
+        'image/svg+xml': 'svg',
+        'image/webp': 'webp'
+    };
+
+    return extensions[mimeType] || 'png';
+}
+
+async function getCurrentImageBlob() {
+    const response = await fetch(currentImageSource);
+    return response.blob();
+}
+
+async function getClipboardImageBlob() {
+    const imageBlob = await getCurrentImageBlob();
+    if (imageBlob.type === 'image/png') {
+        return imageBlob;
+    }
+
+    return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.onload = function () {
+            const canvas = document.createElement('canvas');
+            canvas.width = image.naturalWidth;
+            canvas.height = image.naturalHeight;
+            canvas.getContext('2d').drawImage(image, 0, 0);
+            canvas.toBlob(function (pngBlob) {
+                if (pngBlob) {
+                    resolve(pngBlob);
+                } else {
+                    reject(new Error('Could not prepare the image for copying.'));
+                }
+            }, 'image/png');
+        };
+        image.onerror = reject;
+        image.src = currentImageSource;
+    });
+}
+
+function downloadWithBrowser(fileName) {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = currentImageSource;
+    downloadLink.download = fileName;
+    downloadLink.click();
+}
+
+async function saveCurrentImage(fileName) {
+    if ('showSaveFilePicker' in window) {
+        const extension = `.${getImageFileExtension(currentImageType)}`;
+        const fileHandle = await window.showSaveFilePicker({
+            suggestedName: fileName,
+            types: [{
+                description: 'Image file',
+                accept: { [currentImageType]: [extension] }
+            }]
+        });
+        const writable = await fileHandle.createWritable();
+        await writable.write(await getCurrentImageBlob());
+        await writable.close();
+        statusText.innerText = `Saved ${fileName}`;
+        return;
+    }
+
+    downloadWithBrowser(fileName);
+    statusText.innerText = `Downloading ${fileName}`;
+}
+
+downloadImage.addEventListener('click', async function () {
+    if (!currentImageSource) {
+        return;
+    }
+
+    try {
+        await saveCurrentImage(suggestedImageName);
+    } catch (error) {
+        if (error.name !== 'AbortError') {
+            downloadWithBrowser(suggestedImageName);
+            statusText.innerText = `Downloading ${suggestedImageName}`;
+        }
+    }
+});
+
+copyImage.addEventListener('click', async function () {
+    if (!currentImageSource) {
+        return;
+    }
+
+    try {
+        const imageBlob = await getClipboardImageBlob();
+        await navigator.clipboard.write([
+            new ClipboardItem({ [imageBlob.type]: imageBlob })
+        ]);
+        copyImage.classList.add('is-copied');
+        copyImage.setAttribute('aria-label', 'Image copied');
+        statusText.innerText = 'Image copied to clipboard.';
+        window.setTimeout(function () {
+            copyImage.classList.remove('is-copied');
+            copyImage.setAttribute('aria-label', 'Copy generated image');
+        }, 1600);
+    } catch (error) {
+        statusText.innerText = 'This browser could not copy the image. Try downloading it instead.';
+    }
+});
 
 function getFriendlyErrorMessage(message) {
     if (message && message.toLowerCase().includes('safety system')) {

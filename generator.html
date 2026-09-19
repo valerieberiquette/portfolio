@@ -70,10 +70,20 @@
             <div id="images-visible" class="image-container">
                 <p id="imageContainerText">Your generated image will appear here.</p>
                 <div id="image-loader" class="image-loader" aria-hidden="true" hidden></div>
-                <img id="generated-image"
-                     class="my-generated-image"
-                     src=""
-                     alt="Generated result">
+                <div id="generated-image-wrap" class="generated-image-wrap">
+                    <img id="generated-image"
+                         class="my-generated-image"
+                         src=""
+                         alt="Generated result">
+                    <div class="image-actions">
+                        <button id="copy-image" class="image-action" type="button" aria-label="Copy generated image">
+                            <img src="images/copy.png" alt="">
+                        </button>
+                        <button id="download-image" class="image-action" type="button" aria-label="Save generated image">
+                            <img src="images/download.png" alt="">
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

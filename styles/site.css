@@ -2388,16 +2388,98 @@ hr{
     }
 }
 
+.generated-image-wrap {
+    position: relative;
+    display: none;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.generated-image-wrap.has-image {
+    display: block;
+}
+
 .my-generated-image {
     display: block;
     width: 100%;
     max-height: 520px;
     object-fit: contain;
     border-radius: 8px;
+    transition: filter 0.25s ease;
 }
 
 .my-generated-image[src=""] {
     display: none;
+}
+
+.image-actions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    gap: 14px;
+    opacity: 0;
+    transform: translate(-50%, -42%) scale(0.82);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.image-action {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 26px rgba(24, 38, 45, 0.28);
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.image-action img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.generated-image-wrap:hover .my-generated-image,
+.generated-image-wrap:focus-within .my-generated-image {
+    filter: brightness(0.5);
+}
+
+.generated-image-wrap:hover .image-actions,
+.generated-image-wrap:focus-within .image-actions {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.image-action:is(:hover, :focus-visible) {
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3), 0 12px 30px rgba(24, 38, 45, 0.38);
+    transform: translateY(-4px) scale(1.08);
+}
+
+.image-action.is-copied {
+    background-color: #d3f1da;
+    box-shadow: 0 0 0 4px rgba(211, 241, 218, 0.34), 0 12px 30px rgba(24, 38, 45, 0.38);
+}
+
+@media (hover: none) {
+    .generated-image-wrap.has-image .image-actions {
+        top: auto;
+        right: 14px;
+        bottom: 14px;
+        left: auto;
+        opacity: 1;
+        transform: none;
+    }
+
+    .image-action {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
